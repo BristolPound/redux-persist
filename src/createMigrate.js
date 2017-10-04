@@ -45,7 +45,7 @@ export default function createMigrate(
             'redux-persist: running migration for versionKey',
             versionKey
           )
-        return migrations[versionKey](state)
+        return migrations[versionKey](state, versionKey)
       }, state)
       return Promise.resolve(migratedState)
     } catch (err) {
